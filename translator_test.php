@@ -13,13 +13,5 @@
 			assert($translator->get('storage') == 'armazenamento');
 		?>	
 			<p>End of assertions.</p>
-		<?php	
-			try{
-				$translator_2 = new Translator('nonsense');
-			}
-			catch(Exception $e){
-				echo '<p>Translator fails softly.</p>';
-			}
-		?>
 	</body>
 </html>
