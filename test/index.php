@@ -3,7 +3,7 @@
 		<meta charset="UTF-8" />
 	</head><body>
 		<?php
-			require 'translator.php';
+			require '../translator.php';
 			$translator = new Translator('pt-test', 'en-test', ['es-test', 'fr-test']);
 
 			assert($translator->get('day_of_the_dead') == 'Día de Muertos');
