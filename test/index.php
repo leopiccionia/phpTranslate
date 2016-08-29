@@ -12,6 +12,6 @@
 			assert($translator->get('hello_world') == 'Hello, world!');
 			assert($translator->get('storage') == 'armazenamento');
 		?>	
-			<p>End of assertions.</p>
+		<p>End of assertions.</p>
 	</body>
 </html>
