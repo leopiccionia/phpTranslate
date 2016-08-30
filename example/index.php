@@ -2,7 +2,7 @@
 <?php
 	include '../translator.php';
 	if($_GET['lang'] == 'pt' || $_GET['lang'] == 'pt-br')
-		$lang = new Translator('pt-br');
+		$lang = new Translator(['pt-br', 'en']);
 	else
 		$lang = new Translator('en');
 ?>

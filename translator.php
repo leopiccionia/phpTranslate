@@ -1,30 +1,34 @@
 <?php
 	class Translator{
 		
-		private $languages = array();
+		private $_languages = array();
 		
-		function __construct($main, $base = 'en', array $extra = array()){
-			$json_goal = $this->jsonFileToArray("lang/$main.json");
-			if(empty($json_goal))
-				throw new Exception("Language not found: '$main'.");
-			else
-				$this->languages[$main] = $json_goal;
-			
-			$json_base = $this->jsonFileToArray("lang/$base.json");
-			if(!empty($json_base))
-				$this->languages[$base] = $json_base;
-			
-			if(isset($extra)){
-				foreach($extra as $x){
-					$json_extra = $this->jsonFileToArray("lang/$x.json");
-					if(!empty($json_extra))
-						$this->languages[$x] = $json_extra;
+		function __construct($languages = 'en'){
+			if(empty($languages))
+				throw new Exception('Please, pass at least one language as argument.');
+			elseif(is_string($languages)){
+				$json = $this->jsonFileToArray("lang/$languages.json");
+				if (!empty($json)){
+					$this->_languages[$languages] = $this->jsonFileToArray("lang/$languages.json");
 				}
+				else
+					throw new Exception("Language not found: '$languages'.");
 			}
+			elseif(is_array($languages)){
+				foreach($languages as $language){
+					$json = $this->jsonFileToArray("lang/$language.json");	
+					if(!empty($json))
+						$this->_languages[$language] = $json;
+				}
+				if(empty($this->_languages))
+					throw new Exception("No languages passed.");
+			}
+			else
+				throw new Exception("Language not found: '$languages'.");
 		}
 		
 		function get($token){
-			foreach($this->languages as $language){
+			foreach($this->_languages as $language){
 				if(!empty($language[$token])){
 					return $language[$token];
 				}
