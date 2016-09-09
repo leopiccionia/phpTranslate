@@ -14,6 +14,6 @@
   ... and *¡Hola, mundo!*
   
 ## Requirements
-Currently tested on PHP 5.5.9; should work on next, and some previous, versions.
+Currently tested on PHP 5.5.9; probaby works on versions 5.4 and beyond.
 
 Requires `JSON` extension, that's default since PHP 5.2.0.
