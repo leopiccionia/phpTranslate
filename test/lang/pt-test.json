@@ -1,3 +1,7 @@
 {
-	"storage": "armazenamento"
+	"count_to_three": "Eu sei contar até {{three}}: ?, ?, {{three}}!",
+	"one": "um",
+	"storage": "armazenamento",
+	"three": "três",
+	"two": "dois"
 }

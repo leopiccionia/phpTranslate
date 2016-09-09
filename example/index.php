@@ -5,6 +5,10 @@
 		$lang = new Translator(['pt-br', 'en']);
 	else
 		$lang = new Translator('en');
+	
+	$name = $lang->get('anonymous');
+	if(!empty($_GET['name']))
+		$name = $_GET['name'];
 ?>
 <html>
 	<head>
@@ -15,6 +19,7 @@
 	</head>
 	<body>
 		<h1><?= strtoupper($lang->get('sign-in')) ?></h1>
+		<p><?= $lang->get_and_replace('hello-message', ['name' => $name]) ?></p>
 		<form class="form-group" method="post">
 			<label for="email"><?= $lang->get('email') ?></label>
 			<input type="email" class="form-control" id="email" name="email" />

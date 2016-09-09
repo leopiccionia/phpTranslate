@@ -1,6 +1,8 @@
 {
+	"anonymous": "anonymous",
 	"email": "Email",
 	"forgot-password": "Forgot password?",
+	"hello-message": "Hello, {{name}}!",
 	"page-title": "Login - phpTranslate example",
 	"password": "Password",
 	"sign-in": "Sign in",

@@ -1,5 +1,7 @@
 {
+	"anonymous": "anônimo", 
 	"forgot-password": "Esqueceu sua senha?",
+	"hello-message": "Olá, {{name}}!",
 	"page-title": "Login - exemplo de phpTranslate",
 	"password": "Senha",
 	"sign-in": "Entrar",
