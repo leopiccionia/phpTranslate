@@ -27,6 +27,19 @@
 				throw new Exception("Language not found: '$languages'.");
 		}
 		
+		/* For debugging purposes only. */
+		function dump($to_json = false){
+			$reverse = array_reverse($this->_languages);
+			$result = [];
+			foreach ($reverse as $language) 
+				foreach($language as $key => $value)
+					$result[$key] = $value;
+			if($to_json)
+				echo json_encode($result, JSON_UNESCAPED_UNICODE);
+			else
+				var_dump($result);
+		}
+		
 		function get($token){
 			foreach($this->_languages as $language){
 				if(!empty($language[$token])){
